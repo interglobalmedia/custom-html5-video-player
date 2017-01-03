@@ -60,8 +60,6 @@ function toggleFullScreen() {
         video.mozRequestFullScreen();
     } else if (video.msRequestFullscreen) {
         video.msRequestFullscreen();
-    } else if (video.mozRequestFullScreen) {
-        video.mozRequestFullScreen();
     }
 }
 
