@@ -183,3 +183,41 @@ video::-webkit-media-controls-enclosure {
 video::-webkit-media-controls {
     display:none !important;
 }
+
+/*  Needed to hide palyer controls in Safari Only */
+
+video::-webkit-media-controls-panel {
+    display:none !important;
+}
+
+video::-webkit-media-controls-play-button {
+    display: none !important;
+}
+
+video::-webkit-media-controls-current-time-display {
+    display: none !important;
+}
+
+video::-webkit-media-controls-time-remaining-display {
+    display: none !important;
+}
+
+video::-webkit-media-controls-timeline {
+    display: none !important;
+}
+
+video::-webkit-media-controls-mute-button {
+    display: none !important;
+}
+
+video::-webkit-media-controls-volume-slider {
+    display: none !important;
+}
+
+video::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+}
+
+video::-internal-media-controls-download-button {
+    display: none !important;
+}

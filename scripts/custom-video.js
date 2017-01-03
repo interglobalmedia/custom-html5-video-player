@@ -13,13 +13,17 @@ const fullScreenButton = player.querySelector('.full__screen');
 
 function togglePlay() {
     // .paused is prop that lives on video. There is no playing prop
-    const playMethod = video.paused ? 'play' : 'pause';
+    const playMethod = video.paused
+        ? 'play'
+        : 'pause';
     video[playMethod]();
 }
 
 function updateButton() {
     // this is bound to video itself
-    const icon = this.paused ? '►' : '▋▋';
+    const icon = this.paused
+        ? '►'
+        : '▋▋';
     console.log(icon);
     toggle.textContent = icon;
 }
@@ -35,8 +39,8 @@ function handleRangeUpdate() {
 }
 
 function handleProgress() {
-const percentage = (video.currentTime / video.duration) * 100;
-progressBar.style.flexBasis = `${percentage}%`;
+    const percentage = (video.currentTime / video.duration) * 100;
+    progressBar.style.flexBasis = `${percentage}%`;
 }
 
 function scrub(e) {
@@ -47,11 +51,16 @@ function scrub(e) {
 }
 
 function toggleFullScreen() {
-    if(video.requestFullScreen) {
-        video.requestFullScreen();
-    } else if(video.webkitRequestFullScreen) {
+
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.webkitRequestFullScreen) {
         video.webkitRequestFullScreen();
-    } else if(video.mozRequestFullScreen) {
+    } else if (video.mozRequestFullScreen) {
+        video.mozRequestFullScreen();
+    } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen();
+    } else if (video.mozRequestFullScreen) {
         video.mozRequestFullScreen();
     }
 }
@@ -80,9 +89,3 @@ progress.addEventListener('mousedown', () => mousedown = true);
 progress.addEventListener('mouseup', () => mousedown = false);
 
 fullScreenButton.addEventListener('click', toggleFullScreen);
-
-document.addEventListener('fullscreenchange', function(e) {
-    if(document.fullscreen) {
-        document.player;
-    }
-});
