@@ -13,13 +13,17 @@ const fullScreenButton = player.querySelector('.full__screen');
 
 function togglePlay() {
     // .paused is prop that lives on video. There is no playing prop
-    const playMethod = video.paused ? 'play' : 'pause';
+    const playMethod = video.paused
+        ? 'play'
+        : 'pause';
     video[playMethod]();
 }
 
 function updateButton() {
     // this is bound to video itself
-    const icon = this.paused ? '►' : '▋▋';
+    const icon = this.paused
+        ? '►'
+        : '▋▋';
     console.log(icon);
     toggle.textContent = icon;
 }
@@ -35,8 +39,8 @@ function handleRangeUpdate() {
 }
 
 function handleProgress() {
-const percentage = (video.currentTime / video.duration) * 100;
-progressBar.style.flexBasis = `${percentage}%`;
+    const percentage = (video.currentTime / video.duration) * 100;
+    progressBar.style.flexBasis = `${percentage}%`;
 }
 
 function scrub(e) {
@@ -46,12 +50,18 @@ function scrub(e) {
     video.currentTime = scrubTime;
 }
 
-function goFullScreen(id) {
-    let element = player.querySelector('.viewer');
-    if(element.webkitRequestFullScreen) {
-        element.webkitRequestFullScreen();
-    } else if(element.mozRequestFullScreen) {
-        element.mozRequestFullScreen();
+function toggleFullScreen() {
+
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.webkitRequestFullScreen) {
+        video.webkitRequestFullScreen();
+    } else if (video.mozRequestFullScreen) {
+        video.mozRequestFullScreen();
+    } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen();
+    } else if (video.mozRequestFullScreen) {
+        video.mozRequestFullScreen();
     }
 }
 
@@ -78,4 +88,4 @@ progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
 progress.addEventListener('mousedown', () => mousedown = true);
 progress.addEventListener('mouseup', () => mousedown = false);
 
-fullScreenButton.addEventListener('click', goFullScreen);
+fullScreenButton.addEventListener('click', toggleFullScreen);
