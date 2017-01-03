@@ -47,7 +47,7 @@ function scrub(e) {
 }
 
 function goFullScreen(id) {
-    let element = player.querySelector('#fullScreen');
+    let element = player.querySelector('.viewer');
     if(element.webkitRequestFullScreen) {
         element.webkitRequestFullScreen();
     } else if(element.mozRequestFullScreen) {
