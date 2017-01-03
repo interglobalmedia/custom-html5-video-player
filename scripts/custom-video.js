@@ -46,12 +46,13 @@ function scrub(e) {
     video.currentTime = scrubTime;
 }
 
-function goFullScreen(id) {
-    let element = player.querySelector('.viewer');
-    if(element.webkitRequestFullScreen) {
-        element.webkitRequestFullScreen();
-    } else if(element.mozRequestFullScreen) {
-        element.mozRequestFullScreen();
+function toggleFullScreen() {
+    if(video.requestFullScreen) {
+        video.requestFullScreen();
+    } else if(video.webkitRequestFullScreen) {
+        video.webkitRequestFullScreen();
+    } else if(video.mozRequestFullScreen) {
+        video.mozRequestFullScreen();
     }
 }
 
@@ -78,4 +79,10 @@ progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
 progress.addEventListener('mousedown', () => mousedown = true);
 progress.addEventListener('mouseup', () => mousedown = false);
 
-fullScreenButton.addEventListener('click', goFullScreen);
+fullScreenButton.addEventListener('click', toggleFullScreen);
+
+document.addEventListener('fullscreenchange', function(e) {
+    if(document.fullscreen) {
+        document.player;
+    }
+});
