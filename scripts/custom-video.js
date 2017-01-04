@@ -50,14 +50,15 @@ function scrub(e) {
     video.currentTime = scrubTime;
 }
 
+// toggle between full-screen and normal-screen mode
 function toggleFullScreen() {
 
     if (video.requestFullscreen) {
         video.requestFullscreen();
     } else if (video.webkitRequestFullScreen) {
         video.webkitRequestFullScreen();
-    } else if (video.mozRequestFullScreen) {
-        video.mozRequestFullScreen();
+    } else if (player.mozRequestFullScreen) {
+        player.mozRequestFullScreen();
     } else if (video.msRequestFullscreen) {
         video.msRequestFullscreen();
     }
@@ -71,7 +72,7 @@ video.addEventListener('click', togglePlay);
 video.addEventListener('play', updateButton);
 video.addEventListener('pause', updateButton);
 // can also use progress event as well.
-video.addEventListener('progress', handleProgress);
+video.addEventListener('timeupdate', handleProgress);
 
 toggle.addEventListener('click', togglePlay);
 skipButtons.forEach(button => button.addEventListener('click', skip));

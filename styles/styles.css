@@ -154,7 +154,7 @@ input[type=range]::-moz-range-thumb {
     background: #ffc600;
     cursor: pointer;
 }
-/* full screen button  styling */
+/* full screen button styling */
 .full__screen {
     margin-right: 7px;
     background: none;
@@ -168,6 +168,13 @@ input[type=range]::-moz-range-thumb {
     cursor: pointer;
     max-width: 30px;
     font-size: 1.3rem;
+}
+
+/* Because video needed a defined hieght in order for object-fit: fill to work. */
+
+video {
+    height: 100%;
+    object-fit: fill;
 }
 
 /* hide the default Chrome video player styling */
@@ -184,7 +191,7 @@ video::-webkit-media-controls {
     display:none !important;
 }
 
-/*  Needed to hide palyer controls in Safari Only */
+/*  Needed to hide player controls in Safari Only */
 
 video::-webkit-media-controls-panel {
     display:none !important;
@@ -220,4 +227,26 @@ video::-webkit-media-controls-fullscreen-button {
 
 video::-internal-media-controls-download-button {
     display: none !important;
+}
+
+/* Firefox Shadow DOM Fix */
+
+*::-moz-list-bullet, *::-moz-list-number {
+    display:none !important;
+}
+
+*::-moz-meter-bar {
+    display:none !important;
+}
+
+:-moz-full-screen:not(:root)::backdrop {
+    display:none !important;
+}
+
+*::backdrop {
+    display:none !important;
+}
+
+:fullscreen:not(:root) {
+    display:none !important;
 }
