@@ -4,7 +4,9 @@ html {
     -webkit-box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
@@ -74,7 +76,7 @@ body {
     height: 15px;
 }
 
-.player__controls > * {
+.player__controls>* {
     flex: 1;
 }
 
@@ -155,6 +157,7 @@ input[type=range]::-moz-range-thumb {
     background: #ffc600;
     cursor: pointer;
 }
+
 /* full screen button styling */
 .full__screen {
     margin-right: 7px;
@@ -181,21 +184,21 @@ video {
 /* hide the default Chrome video player styling */
 
 video::-webkit-media-controls-overlay-enclosure {
-    display:none !important;
+    display: none !important;
 }
 
 video::-webkit-media-controls-enclosure {
-    display:none !important;
+    display: none !important;
 }
 
 video::-webkit-media-controls {
-    display:none !important;
+    display: none !important;
 }
 
 /*  Needed to hide player controls in Safari Only */
 
 video::-webkit-media-controls-panel {
-    display:none !important;
+    display: none !important;
 }
 
 video::-webkit-media-controls-play-button {
@@ -232,24 +235,25 @@ video::-internal-media-controls-download-button {
 
 /* Firefox Shadow DOM Fix */
 
-*::-moz-list-bullet, *::-moz-list-number {
-    display:none !important;
+*::-moz-list-bullet,
+*::-moz-list-number {
+    display: block !important;
 }
 
 *::-moz-meter-bar {
-    display:none !important;
+    display: none !important;
 }
 
 :-moz-full-screen:not(:root)::backdrop {
-    display:none !important;
+    display: block !important;
 }
 
 *::backdrop {
-    display:none !important;
+    display: block !important;
 }
 
 :fullscreen:not(:root) {
-    display:none !important;
+    display: block !important;
 }
 
 /* New addition to removal of User Agent StyleSheet for Firefox. Removed dotted border around range. */
