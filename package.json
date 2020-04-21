@@ -1,24 +1,24 @@
 {
-  "name": "custom-html5-video-player",
-  "version": "1.0.0",
-  "description": "* I became acquainted with the ShadowDOM when I made my video player go full screen. That infernal Shadow DOM. But it's very important and useful to get to know for such situations as I encountered.",
-  "main": "index.js",
-  "scripts": {
-    "clean": "rm -rf dist/ && mkdir",
-    "build": "cp -R brand-favicons scripts styles dist/ && cp favicon.ico index.html dist/",
-    "deploy": "gh-pages -d dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/interglobalmedia/custom-html5-video-player.git"
-  },
-  "author": "Maria D. Campbell",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/interglobalmedia/custom-html5-video-player/issues"
-  },
-  "homepage": "https://github.com/interglobalmedia/custom-html5-video-player#readme",
-  "dependencies": {
-    "gh-pages": "^2.2.0"
-  }
+    "name": "custom-html5-video-player",
+    "version": "1.0.0",
+    "description": "* I became acquainted with the ShadowDOM when I made my video player go full screen. That infernal Shadow DOM. But it's very important and useful to get to know for such situations as I encountered.",
+    "main": "index.js",
+    "scripts": {
+        "clean": "rm -rf dist/ && mkdir dist/",
+        "build": "cp -R brand-favicons scripts styles dist/ && cp favicon.ico index.html dist/",
+        "deploy": "gh-pages -d dist"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/interglobalmedia/custom-html5-video-player.git"
+    },
+    "author": "Maria D. Campbell",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/interglobalmedia/custom-html5-video-player/issues"
+    },
+    "homepage": "https://github.com/interglobalmedia/custom-html5-video-player#readme",
+    "dependencies": {
+        "gh-pages": "^2.2.0"
+    }
 }

@@ -260,3 +260,30 @@ video::-internal-media-controls-download-button {
 input[type="range"]::-moz-focus-outer {
     border: 0;
 }
+
+/* currentTme styling */
+.timer {
+    line-height: 38px;
+    font-size: 1rem;
+    font-family: monospace;
+    text-shadow: 1px 1px 0px black;
+    color: white;
+    flex: 5;
+    position: relative;
+}
+
+.timer div {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2);
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 38px;
+    z-index: 2;
+}
+
+.timer span {
+    position: absolute;
+    z-index: 3;
+    left: 10px;
+}
