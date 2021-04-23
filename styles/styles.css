@@ -1,0 +1,289 @@
+html {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    display: flex;
+    background: #7A419B;
+    min-height: 100vh;
+    background: linear-gradient(135def, #7c1599 0%, #921099 48%, #7e4ae8 100%);
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.player {
+    max-width: 750px;
+    border: 5px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.player__video {
+    width: 100%;
+}
+
+.player__button {
+    background: none;
+    border: 0;
+    line-height: 1;
+    color: white;
+    text-align: center;
+    outline: 0;
+    padding: 0;
+    cursor: pointer;
+    max-width: 50px;
+}
+
+.player__button:focus {
+    border-color: #ffc600;
+}
+
+.player__slider {
+    width: 10px;
+    height: 30px;
+}
+
+.player__controls {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(100%) translateY(-5px);
+    transition: all 0.3s;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 2147483648;
+    left: 0;
+}
+
+.player:hover .player__controls {
+    transform: translateY(0);
+}
+
+.player:hover .progress {
+    height: 15px;
+}
+
+.player__controls>* {
+    flex: 1;
+}
+
+.progress {
+    flex: 10;
+    position: relative;
+    display: flex;
+    flex-basis: 100%;
+    height: 5px;
+    transition: height 0.3s;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: ew-resize;
+}
+
+.progress__filled {
+    width: 50%;
+    background: #ffc600;
+    flex: 0;
+    flex-basis: 50%;
+}
+
+/* unholy css to style input type="range" */
+
+input[type=range] {
+    -webkit-appearance: none;
+    background: transparent;
+    width: 100%;
+    margin: 12px 3px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 1.3px;
+    border: 0.2px solid rgba(1, 1, 1, 0);
+}
+
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
+    height: 1.75em;
+    width: 1.75em;
+    border-radius: 50px;
+    background: #ffc600;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ffc600;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+    background: #fff;
+    border-radius: 1.3px;
+    border: 0.2px solid rgba(1, 1, 1, 0);
+}
+
+input[type=range]::-moz-range-thumb {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+    height: 1.75em;
+    width: 1.75em;
+    border: 0;
+    border-radius: 50px;
+    background: #ffc600;
+    cursor: pointer;
+}
+
+/* full screen button styling */
+.full__screen {
+    margin-right: 7px;
+    background: none;
+    border: 1px solid white;
+    border: 0;
+    line-height: 1;
+    color: white;
+    text-align: center;
+    outline: 0;
+    padding: 0 0 5px 0;
+    cursor: pointer;
+    max-width: 30px;
+    font-size: 1.3rem;
+}
+
+/* Because video needed a defined hieght in order for object-fit: fill to work. */
+
+video {
+    height: 100%;
+    object-fit: fill;
+}
+
+/* hide the default Chrome video player styling */
+
+video::-webkit-media-controls-overlay-enclosure {
+    display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+/*  Needed to hide player controls in Safari Only */
+
+video::-webkit-media-controls-panel {
+    display: none !important;
+}
+
+video::-webkit-media-controls-play-button {
+    display: none !important;
+}
+
+video::-webkit-media-controls-current-time-display {
+    display: none !important;
+}
+
+video::-webkit-media-controls-time-remaining-display {
+    display: none !important;
+}
+
+video::-webkit-media-controls-timeline {
+    display: none !important;
+}
+
+video::-webkit-media-controls-mute-button {
+    display: none !important;
+}
+
+video::-webkit-media-controls-volume-slider {
+    display: none !important;
+}
+
+video::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+}
+
+video::-internal-media-controls-download-button {
+    display: none !important;
+}
+
+/* Firefox Shadow DOM Fix */
+
+*::-moz-list-bullet,
+*::-moz-list-number {
+    display: block !important;
+}
+
+*::-moz-meter-bar {
+    display: none !important;
+}
+
+:-moz-full-screen:not(:root)::backdrop {
+    display: block !important;
+}
+
+*::backdrop {
+    display: block !important;
+}
+
+:fullscreen:not(:root) {
+    display: block !important;
+}
+
+/* New addition to removal of User Agent StyleSheet for Firefox. Removed dotted border around range. */
+input[type="range"]::-moz-focus-outer {
+    border: 0;
+}
+
+/* currentTme styling */
+.timer {
+    line-height: 38px;
+    font-size: 1rem;
+    font-family: monospace;
+    text-shadow: 1px 1px 0px black;
+    color: white;
+    flex: 5;
+    position: relative;
+}
+
+.timer div {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2);
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 38px;
+    z-index: 2;
+}
+
+.timer span {
+    position: absolute;
+    z-index: 3;
+    left: 10px;
+}

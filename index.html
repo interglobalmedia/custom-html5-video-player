@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Custom HTML5 Video Player</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="brand-favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="brand-favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="brand-favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="brand-favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="brand-favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="brand-favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="brand-favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="brand-favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="brand-favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="brand-favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="brand-favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="brand-favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="brand-favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="brand-favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="https://interglobalmedia.github.io/custom-html5-video-player/favicon.ico" />
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <div class="player">
+        <video class="player__video viewer"
+            src="https://player.vimeo.com/external/194837908.sd.mp4?s=c350076905b78c67f74d7ee39fdb4fef01d12420&profile_ide=164"></video>
+
+        <div class="player__controls">
+            <div class="timer">
+                <span aria-label="timer">00:00:00</span>
+            </div>
+            <div class="progress">
+                <div class="progress__filled"></div>
+            </div>
+            <button class="player__button toggle" title="Toggle Play">►</button>
+            <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
+            <input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1" value="1">
+
+            <button data-skip="-10" class="player__button">« 10s</button>
+            <button data-skip="25" class="player__button">25s »</button>
+            <button class="full__screen">[⎚]</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="scripts/custom-video.js"></script>
+</body>
+
+</html>
