@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "clean": "rm -rf dist/ && mkdir dist/",
-        "build": "cp -R brand-favicons scripts styles dist/ && cp favicon.ico index.html dist/",
+        "build": "cp -R brand-favicons scripts styles videos dist/ && cp favicon.ico index.html dist/",
         "deploy": "gh-pages -d dist"
     },
     "repository": {
