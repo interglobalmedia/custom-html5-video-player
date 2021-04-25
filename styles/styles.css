@@ -287,3 +287,18 @@ input[type="range"]::-moz-focus-outer {
     z-index: 3;
     left: 10px;
 }
+
+.attribution-wrapper {
+    display: flex;
+    font-family: serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.07rem;
+    position: absolute;
+    bottom: 0;
+    flex: wrap;
+    color: #fff;
+}
+
+.attribution-wrapper a {
+    color: #ffe556;
+}
